@@ -153,19 +153,35 @@
   color: #CBD5E1;
 }
 
-/* SERVICE / PROCESS / REVIEW */
+/* SERVICE / PROCESS */
 
 .service-container,
-.process-container,
-.review-container {
+.process-container {
   width: 100%;
   max-width: 1180px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   gap: 24px;
   margin-top: 42px;
 }
+
+/* REVIEW */
+
+.review-container {
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+  margin-top: 42px;
+}
+
+/* CARD COMMON */
 
 .service-box,
 .process-box,
@@ -239,6 +255,8 @@
   opacity: 0.8;
 }
 
+/* SERVICE */
+
 .service-box {
   width: 350px;
   padding: 38px;
@@ -258,6 +276,8 @@
   color: var(--color-primary);
 }
 
+/* PROCESS */
+
 .process-box {
   width: 315px;
   padding: 38px 30px;
@@ -272,14 +292,26 @@
   line-height: 1;
 }
 
+/* REVIEW */
+
 .review-box {
-  width: 350px;
-  padding: 34px;
+  width: 100%;
+  padding: 42px;
   text-align: left;
 }
 
+.review-box h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
 .review-box p {
-  line-height: 1.75;
+  margin-bottom: 16px;
+  line-height: 1.9;
+}
+
+.review-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* CONTACT */
@@ -429,12 +461,18 @@ section.show .review-box:nth-child(5) {
   }
 
   .service-box,
-  .process-box,
-  .review-box {
+  .process-box {
     width: 100%;
     max-width: 100%;
     padding: 28px 22px;
     border-radius: 28px;
+  }
+
+  .review-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 24px;
   }
 
   .process-box {
@@ -443,5 +481,16 @@ section.show .review-box:nth-child(5) {
 
   .review-box {
     text-align: left;
+  }
+
+  .review-box h3 {
+    font-size: 1.28rem;
+    margin-bottom: 16px;
+  }
+
+  .review-box p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    margin-bottom: 14px;
   }
 }
