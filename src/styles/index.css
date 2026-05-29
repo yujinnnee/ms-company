@@ -274,8 +274,8 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 92vh;
-    padding-top: 210px;
+    min-height: 100vh;
+    padding-top: 80px;
   }
 
   .hero-text {

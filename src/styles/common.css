@@ -175,12 +175,11 @@ footer p {
 
 @media (max-width: 768px) {
   .header {
-    top: 12px;
-    width: calc(100% - 24px);
-    border-radius: 26px;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px;
+    display: none;
+  }
+
+  .hero-section {
+    padding-top: 80px;
   }
 
   .header-menu {
