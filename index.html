@@ -165,7 +165,12 @@
     <span class="section-label">REVIEW</span>
     <h2>이용 후기</h2>
 
-    <div class="review-container">
+    <div class="review-slider">
+      <button class="review-nav review-nav-prev" type="button" aria-label="이전 후기">
+        &lt;
+      </button>
+
+      <div class="review-container" tabindex="0">
       <div class="review-box">
         <h3>자연스럽게 노출이 늘어난 후기</h3>
         <p>
@@ -261,6 +266,12 @@
           마케팅을 계속 이용해볼 생각입니다.
         </p>
       </div>
+
+      </div>
+
+      <button class="review-nav review-nav-next" type="button" aria-label="다음 후기">
+        &gt;
+      </button>
     </div>
   </div>
 </section>
@@ -288,6 +299,11 @@
 
   <footer>
     <p>365일 연중무휴 상담 가능&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;010-9601-8675</p>
+    <div class="footer-business-info">
+      <p>사업자등록번호 : 811-08-02350&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;대표 : 홍민성</p>
+      <p>주소 : 경기도 김포시 김포한강10로133번길 82, B동 2층 219호</p>
+      <p>TEL : 010-9601-8675</p>
+    </div>
   </footer>
 
   <script>
@@ -307,6 +323,46 @@
 
     window.addEventListener('scroll', revealSections);
     revealSections();
+
+    const reviewContainer = document.querySelector('.review-container');
+    const reviewPrevButton = document.querySelector('.review-nav-prev');
+    const reviewNextButton = document.querySelector('.review-nav-next');
+
+    if (reviewContainer && reviewPrevButton && reviewNextButton) {
+      const getReviewScrollAmount = () => {
+        const firstReview = reviewContainer.querySelector('.review-box');
+        const gap = parseFloat(getComputedStyle(reviewContainer).columnGap) || 24;
+
+        return firstReview
+          ? firstReview.getBoundingClientRect().width + gap
+          : reviewContainer.clientWidth;
+      };
+
+      const updateReviewButtons = () => {
+        const maxScrollLeft = reviewContainer.scrollWidth - reviewContainer.clientWidth - 1;
+
+        reviewPrevButton.disabled = reviewContainer.scrollLeft <= 0;
+        reviewNextButton.disabled = reviewContainer.scrollLeft >= maxScrollLeft;
+      };
+
+      reviewPrevButton.addEventListener('click', () => {
+        reviewContainer.scrollBy({
+          left: -getReviewScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+
+      reviewNextButton.addEventListener('click', () => {
+        reviewContainer.scrollBy({
+          left: getReviewScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+
+      reviewContainer.addEventListener('scroll', updateReviewButtons);
+      window.addEventListener('resize', updateReviewButtons);
+      updateReviewButtons();
+    }
   </script>
 
 </body>

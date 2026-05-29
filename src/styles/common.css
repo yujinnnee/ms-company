@@ -198,6 +198,16 @@ footer p {
   font-size: 0.92rem;
 }
 
+.footer-business-info {
+  margin-top: 14px;
+}
+
+.footer-business-info p {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .header {
     display: none;
