@@ -185,27 +185,21 @@ p {
 }
 
 footer {
-  padding: 44px 20px;
-  background:
-    radial-gradient(circle at top, rgba(217, 119, 6, 0.14), transparent 32%),
-    var(--color-dark-background);
+  padding: 0;
+  background: #000000;
   text-align: center;
 }
 
-footer p {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 5px 0;
-  font-size: 0.92rem;
+footer picture {
+  display: block;
 }
 
-.footer-business-info {
-  margin-top: 14px;
-}
-
-.footer-business-info p {
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.85rem;
-  line-height: 1.6;
+.footer-image {
+  display: block;
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
